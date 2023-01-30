@@ -1,24 +1,16 @@
-# vue-todo-kanban
+<h1 align="center">Todo Kanban</h1>
 
-## Project setup
-```
-npm install
-```
+Repositório com uma aplicação web para simular um Todo com Kanban. projeto consiste apenas para fins acadêmicos.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## :wrench: Recursos Utilizados
 
-### Lints and fixes files
-```
-npm run lint
-```
+- [HTML5](https://www.w3schools.com/html/)
+- [CSS3](https://www.w3schools.com/css/)
+- [Vue CLI v5.0.8](https://cli.vuejs.org/) 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## :floppy_disk: Instalação
+Baixar repositório ```https://github.com/PauloAlves8039/vue-todo-kanban.git```
+
+## Author
+:boy: [Paulo Alves](https://github.com/PauloAlves8039)
