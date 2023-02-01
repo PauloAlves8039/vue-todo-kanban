@@ -3,15 +3,22 @@
     <div>
       <img src="https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg" alt="tarefas" class="image-title rounded mx-auto d-block">
     </div>
-    <form class="row form-todo">
+    <form @submit.prevent="addTodo(todo)" class="row form-todo">
       <div class="col">
-        <input type="text" class="form-control input-todo" placeholder="Novo Todo" />
+        <input 
+          type="text" 
+          v-model="todo.description"
+          class="form-control input-todo" 
+          placeholder="Novo Todo" 
+        />
       </div>
-      <div class="col">
+      <div class="div-buttons col">
         <button class="btn btn-outline-primary buttons">
-          <i class="bi bi-plus-square"></i>
           Adicionar
         </button>
+      </div>
+      <div>
+        {{ todos }}
       </div>
     </form>
   </div>
@@ -20,6 +27,24 @@
 <script>
 export default {
   name: 'AppTodo',
+  data() {
+    return {
+      todos: [],
+      todo: {
+        checked: false
+      }
+    }
+  },
+  methods: {
+    addTodo(todo) {
+      todo.id = Date.now();
+      this.todos.push(todo);
+      this.clearFild();
+    },
+    clearFild() {
+      this.todo = "";
+    },
+  }
 }
 </script>
 
@@ -41,6 +66,10 @@ export default {
 
 .content-button {
   margin-right: 250px;
+}
+
+.div-buttons {
+  margin-left: -3%;
 }
 
 .buttons {
