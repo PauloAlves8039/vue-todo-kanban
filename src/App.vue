@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .nav-link {
   color: #06EEFF;
 }
