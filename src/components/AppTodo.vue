@@ -12,15 +12,15 @@
           placeholder="Novo Todo" 
         />
       </div>
-      <div class="div-buttons col">
+      <div class="col div-buttons">
         <button class="btn btn-outline-primary buttons">
           Adicionar
         </button>
       </div>
-      <div>
-        {{ todos }}
-      </div>
     </form>
+    <div class="todo-list">
+      {{ todos }}
+    </div>
   </div>
 </template>
 
@@ -49,6 +49,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 700px;
+}
+
 .image-title {
   width: 100px;  
   height: 100px;
@@ -56,23 +60,23 @@ export default {
 }
 
 .form-todo {
-  max-width: 600px;
+  max-width: 700px;
   margin: 3% auto;
 }
 
 .input-todo {
-  width: 400px;
+  width: 454px;
 }
 
 .content-button {
-  margin-right: 250px;
-}
-
-.div-buttons {
-  margin-left: -3%;
+  margin-right: 200px;
 }
 
 .buttons {
   width: 150px;
+}
+
+.todo-list {
+  margin-left: 10px;
 }
 </style>
