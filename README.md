@@ -1,6 +1,6 @@
 <h1 align="center">Todo Kanban</h1>
 
-Repositório com uma aplicação web para simular um Todo com Kanban. projeto consiste apenas para fins acadêmicos.
+Repositório com uma aplicação web para simular um gerenciador de tarefas (Todo) com uso de um quadro de Kanban. projeto consiste apenas para fins acadêmicos.
 
 
 ## :wrench: Recursos Utilizados
