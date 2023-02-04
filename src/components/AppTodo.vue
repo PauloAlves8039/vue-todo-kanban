@@ -19,7 +19,22 @@
       </div>
     </form>
     <div class="todo-list">
-      {{ todos }}
+      <div v-for="todoList in todos" :key="todoList.id">
+        <div class="card border-info mb-2" style="max-width: 40rem;">
+          <div class="title-card card-header text-center">
+            <i class="bi bi-alarm"></i>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              {{ todoList.description }}
+            </p>
+            <div class="text-end">
+              <button class="btn btn-outline-success">Concluido</button>
+              <button class="btn btn-outline-danger m-2">Remover</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,11 +54,8 @@ export default {
     addTodo(todo) {
       todo.id = Date.now();
       this.todos.push(todo);
-      this.clearFild();
-    },
-    clearFild() {
-      this.todo = "";
-    },
+      this.todo = {checked: false};
+    }
   }
 }
 </script>
