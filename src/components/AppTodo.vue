@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <img src="https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg" alt="tarefas" class="image-title rounded mx-auto d-block">
+      <img src="../assets/images/todo1.jpg" alt="tarefas" class="image-title rounded mx-auto d-block">
     </div>
     <form @submit.prevent="addTodo(todo)" class="row form-todo">
       <div class="col">
