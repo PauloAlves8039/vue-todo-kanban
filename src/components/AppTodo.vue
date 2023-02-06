@@ -19,17 +19,22 @@
       </div>
     </form>
     <div class="todo-list">
-      <div v-for="todoList in todos" :key="todoList.id">
+      <div v-for="todoList in todos" :key="todoList.id" @toggle="toggleTodo">
         <div class="card border-info mb-2" style="max-width: 40rem;">
-          <div class="title-card card-header text-center">
-            <i class="bi bi-alarm"></i>
+          <div class="title-card card-header text-center" :class="{Checked: todo.checked}">
+            <i
+              :class="todo.checked ? 'bi-check-circle' : 'bi bi-alarm'" 
+            ></i>
           </div>
           <div class="card-body">
             <p class="card-text">
               {{ todoList.description }}
             </p>
             <div class="text-end">
-              <button class="btn btn-outline-success">Concluido</button>
+              <button @click="$emit('toggle', todo)" class="btn btn-outline-success">
+                <span v-if="todo.checked">Desmarcar</span>
+                <span v-else>Concluido</span>
+              </button>
               <button class="btn btn-outline-danger m-2">Remover</button>
             </div>
           </div>
@@ -55,6 +60,13 @@ export default {
       todo.id = Date.now();
       this.todos.push(todo);
       this.todo = {checked: false};
+    },
+    toggleTodo(todo) {
+      const index = this.todos.findIndex(item => item.id === todo.id);
+      if (index > -1) {
+        const checked = !this.todos[index].checked;
+        this.$set(this.todos, index, {...this.todos[index], checked});
+      }
     }
   }
 }
@@ -90,5 +102,10 @@ export default {
 
 .todo-list {
   margin-left: 10px;
+}
+
+.Checked {
+  text-decoration: line-through;
+  color: #E9E2E2;
 }
 </style>
